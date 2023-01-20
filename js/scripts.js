@@ -23,7 +23,7 @@ let dogRepository = (function(){
     function addListItem(dog){
         let dogList = $('.dog-list');
         let listItem = $('<li class="group-list-item"><li>');
-        let itemButton = $('<button type="button" class="dog-button btn btn-info" data-target="#dog-modal" data-toggle="modal">${dog.name}<button>');
+        let itemButton = $('<button type="button" class="dog-button btn btn-info" data-target="#dog-modal" data-toggle="modal">' + dog.name + '<button>');
 
         listItem.append(itemButton);
         dogList.append(listItem);
@@ -41,7 +41,7 @@ let dogRepository = (function(){
         return fetch(apiUrl).then(function(response){
             return response.json();
         }).then(function(json){
-            json.results.forEach(function(item){
+            json.forEach(function(item){
                 let dog = {
                     weight: item.weight.imperial,
                     height: item.height.imperial,
@@ -59,26 +59,6 @@ let dogRepository = (function(){
             console.error(e);
         })
     }
-    
-
-    // function to use the detailsUrl to load details data about dog breeds
-    function loadDetails(item){
-        return fetch(apiUrl).then(function(response){
-            return response.json();
-        }).then(function(details){
-            //item details
-            item.imageUrl = details.image.url;
-            item.breedGroup = details.breed_group;
-            item.weight = details.weight.imperial;
-            item.height = details.height.imperial;
-            item.lifeSpan = details.life_span;
-            item.temperment = details.temperment;
-            item.origin = details.origin;
-            item.bredFor = details.bred_for;
-        }).catch(function(e){
-            console.error(e);
-        });
-    }
 
     //function to show details
     function showDetails(dog){
@@ -88,7 +68,7 @@ let dogRepository = (function(){
     }
 
     // Modal function using Bootstrap
-    function showDetalsModal(dog){
+    function showDetailsModal(dog){
         let modalTitle = $('.modal-title');
         let modalBody = $('.modal-body');
 
@@ -120,13 +100,12 @@ let dogRepository = (function(){
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails,
         showDetails: showDetails
     };
 })();
 
 dogRepository.loadList().then(function(){
-    dog.Repository.getAll().forEach(function(dog){
+    dogRepository.getAll().forEach(function(dog){
         dogRepository.addListItem(dog);
     });
 });

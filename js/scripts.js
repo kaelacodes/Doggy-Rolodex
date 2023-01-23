@@ -21,9 +21,9 @@ let dogRepository = (function(){
 
     // add dogs to dogList in <button> format
     function addListItem(dog){
-        let dogList = $('.dog-list');
+        let dogList = $('#dog-list');
         let listItem = $('<li class="group-list-item"><li>');
-        let itemButton = $('<button type="button" class="dog-button btn btn-info" data-target="#dog-modal" data-toggle="modal">' + dog.name + '<button>');
+        let itemButton = $(`<button type="button" class="dog-button btn btn-info" data-target="#dog-modal" data-toggle="modal">${dog.name}<button>`);
 
         listItem.append(itemButton);
         dogList.append(listItem);
@@ -49,7 +49,7 @@ let dogRepository = (function(){
                     bredFor: item.bred_for,
                     breedGroup: item.breed_group,
                     lifeSpan: item.life_span,
-                    temperment: item.temperment,
+                    temperament: item.temperament,
                     origin: item.origin,
                     imageUrl: item.image.url
                 };
@@ -62,7 +62,7 @@ let dogRepository = (function(){
 
     //function to show details
     function showDetails(dog){
-        loadDetails(dog).then(function(){
+        loadList(dog).then(function(){
             showDetailsModal(dog);
         });
     }
@@ -73,16 +73,16 @@ let dogRepository = (function(){
         let modalBody = $('.modal-body');
 
         modalBody.empty();
-        modalTitle.text(dog.name.charAt(0).toUpperCase() + dog.name.slice(1));
+        modalTitle.text(dog.name);
 
-        let image = $('<div class="dog-img" src="' + dog.imageUrl + '"/>');
-        let breedGroup = $('<p class="col-12 text-center">' + 'Breed Group: ' + dog.breedGroup + '</p>');
-        let weight = $('<p class="col-12 text-center">' + 'Weight: ' + dog.weight + '</p>');
-        let height = $('<p class="col-12 text-center">' + 'Height: ' + dog.height + '</p>');
-        let lifeSpan = $('<p class="col-12 text-center">' + 'Life Span: ' + dog.lifeSpan + '</p>');
-        let temperment = $('<p class="col-12 text-center">' + 'Temperment' + dog.temperment + '</p>');
-        let origin = $('<p class="col-12 text-center">' + 'Origin: ' + dog.origin + '</p>');
-        let bredFor = $('<p class="col-12 text-center">' + 'Bred For: ' + dog.bredFor + '</p>');
+        let image = $('<img id="dog-img" src="' + dog.imageUrl + '"/>');
+        let breedGroup = $('<p id="breed-group" class="col-12 text-center">Breed Group: ' + dog.breedGroup + '</p>');
+        let weight = $('<p id="weight" class="col-12 text-center">Weight: ' + dog.weight + ' lbs</p>');
+        let height = $('<p id="height" class="col-12 text-center">Height: ' + dog.height + ' inches</p>');
+        let lifeSpan = $('<p id="life-span" class="col-12 text-center">Life Span: ' + dog.lifeSpan + '</p>');
+        let temperment = $('<p id="temperament" class="col-12 text-center">Temperment: ' + dog.temperament + '</p>');
+        let origin = $('<p id="origin" class="col-12 text-center">Origin: ' + dog.origin + '</p>');
+        let bredFor = $('<p id="bred-for" class="col-12 text-center">Bred For: ' + dog.bredFor + '</p>');
 
         modalBody.append(image);
         modalBody.append(breedGroup);
@@ -92,7 +92,21 @@ let dogRepository = (function(){
         modalBody.append(temperment);
         modalBody.append(origin);
         modalBody.append(bredFor);
-    }
+
+        if (dog.origin === undefined) {
+            $('#origin').remove();
+        }
+    }   
+
+    // functionality for filtering dog-list via search input
+    $(document).ready(function(){
+        $('#search-value').on('keyup', function(){
+          var value = $(this).val().toLowerCase();
+          $('#dog-list li').filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
 
     // filter data from defined functions
     return {
@@ -104,15 +118,15 @@ let dogRepository = (function(){
     };
 })();
 
+/*
+dogRepository.getAll().forEach(function(dog) {
+    dogRepository.addListItem(dog);
+});
+*/
+
 dogRepository.loadList().then(function(){
     dogRepository.getAll().forEach(function(dog){
         dogRepository.addListItem(dog);
     });
 });
 
-/*
-// UPDATED: forEach() loop - DOM manipulation
-dogRepository.getAll().forEach((function(dog){
-    dogRepository.addListItem(dog);
-}))
-*/

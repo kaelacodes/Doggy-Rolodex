@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #f6f5f0;
+    --secondary-color: #324943;
+    --secondary-color-ligther:#3e5b54;
+    --secondary-color-darker:#283a36;
+    --tertiary-color: #483b3c;
+    --tertiary-color-lighter: #8d7577;
+    --tertiary-color-lightest: #c7bbbc;
+}
+body {
+    background-color: var(--primary-color);
+    font-family: 'Hind Madurai', sans-serif;
+    line-height: 1.2;
+    color: var(--secondary-color);
+}
+header {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Main Styling */
+
+main{
+    text-align: left;
+}
+.dog-list {
+    list-style: none;
+    margin: auto;
+    padding-top:100px;
+    display: grid;
+    width: 100%;
+    max-width: 1280px;
+    justify-content:center;
+    grid-template-columns: repeat(auto-fit, 300px);
+}
+.dog-button {
+    background-color: var(--secondary-color);
+    box-shadow: 5px 5px 5px var(--tertiary-color-lighter);
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 2px;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 8px;
+    width: 175px;
+    text-transform: capitalize;
+}
+.dog-button:hover {
+    background-color: var(--secondary-color-darker);
+}
+.dog-button:active {
+    background-color: var(--secondary-color-lighter);
+    box-shadow: 5px 5px 5px var(--tertiary-color);
+    transform: translateY(4px);
+}
+#dog-img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/* Responsive Stylings */
+
+@media all and (max-width: 700px){
+    body {
+      font-size: 14px;
+    }
+    main {
+        padding-left: 25px;
+    }
+  }
+  @media all and (min-width: 700px){
+    body {
+      font-size: 20px;
+    }
+    main {
+        padding-left:50px;
+    }
+  }

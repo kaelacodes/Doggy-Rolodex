@@ -25,8 +25,9 @@ let dogRepository = (function (){
     //function to load dog API list
     function loadList(){
         return fetch(apiUrl).then(function(response){
-            return response.json();
-        }).then(function(json){
+        return response.json();
+        })
+        .then(function(json){
             json.forEach(function(item){
                 let dog = {
                     weight: item.weight.imperial,
@@ -49,19 +50,18 @@ let dogRepository = (function (){
 
     // add dogs to dogList in <button> format
     function addListItem(dog){
-        let listItem = $('<li class="group-list-item"></li>');
+        let listItem = $('<li class="list-item group-list-item"></li>');
         let itemButton = $('<button type="button" class="dog-button btn btn-info" data-target="#dog-modal" data-toggle="modal">' + dog.name + '</button>');
 
         //listItem.append(itemButton);
         listItem.append(itemButton);
         dogListElement.append(listItem);
 
-        console.log('addlListItem() called' + dog.name);
-        console.log("dog object", JSON.stringify(dog));
+        console.log('addlListItem() called');
 
         //event listener shows dog details when button is clicked
         itemButton.on('click', function(){
-            console.log('itemButton has been clicked',  JSON.stringify(dog));
+            console.log('itemButton has been clicked');
             showDetailsModal(dog);
         });
     }
@@ -74,7 +74,7 @@ let dogRepository = (function (){
         modalBody.empty();
         modalTitle.text(dog.name);
 
-        let image = $('<img id="dog-img" src="' + dog.imageUrl + '"/>');
+        let image = $('<img class="col-12" id="dog-img" src="' + dog.imageUrl + '"/>');
         let breedGroup = $('<p id="breed-group" class="col-12 text-center">Breed Group: ' + dog.breedGroup + '</p>');
         let weight = $('<p id="weight" class="col-12 text-center">Weight: ' + dog.weight + ' lbs</p>');
         let height = $('<p id="height" class="col-12 text-center">Height: ' + dog.height + ' inches</p>');
@@ -121,8 +121,6 @@ let dogRepository = (function (){
         });
       });
 
-      console.log('function X is cslled');
-
       // filter data from defined functions
     return {
         add: add,
@@ -136,6 +134,6 @@ let dogRepository = (function (){
 dogRepository.loadList().then(function(){
     dogRepository.getAll().forEach(function(dog){
         dogRepository.addListItem(dog);
-        console.log('implement dog objects from API into DOM ' + dog.name);
+        console.log('implement ' + dog.name + ' object from API into DOM');
     });
 });

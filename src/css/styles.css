@@ -101,21 +101,128 @@ main {
 
 /* Responsive Stylings */
 
-@media all and (max-width: 700px){
+@media all and (min-width: 100px) and (max-width: 300px){
+    body {
+      font-size: 12px;
+    }
+    .logo{
+        width:30px;
+    }
+    .nav-brand{
+        font-size:10px;
+    }
+    #search-value{
+        width: 100px;
+        height: 20px;
+    }
+    .md-form {
+        margin:0;
+        padding-top:12px;
+    }
+    main{
+        margin-top: 0;
+        padding-left:15px;
+        padding-right: 15px;
+    }
+    .welcome {
+        margin-bottom:0;
+        margin-top:20px;
+    }
+    h1{
+        font-size: 17px;
+        margin: 15px;
+        padding-top: 15px;
+    }
+    .dog-list{
+        grid-gap: 10px;
+    }
+  }
+
+  @media all and (min-width: 300px) and (max-width: 400px){
     body {
       font-size: 14px;
     }
+    .logo{
+        width:40px;
+    }
+    .nav-brand{
+        font-size:10px;
+    }
+    #search-value{
+        width: 120px;
+        height:25px;
+    }
+    .md-form {
+        margin:0;
+        padding-top:12px;
+    }
     main{
-        margin: auto;
-        padding:25px;
+        margin-top: 0;
+        padding-left:15px;
+        padding-right: 15px;
+    }
+    .welcome {
+        margin-bottom:0;
+        margin-top:15px;
+    }
+    h1{
+        font-size: 20px;
+        margin: 15px;
+        padding-top: 25px;
+    }
+    .dog-list{
+        grid-gap: 10px;
     }
   }
-  @media all and (min-width: 700px){
+
+  @media all and (min-width: 400px) and (max-width:800px){
+    body {
+      font-size: 14px;
+    }
+    .logo{
+        width:40px;
+    }
+    .nav-brand{
+        font-size:10px;
+    }
+    #search-value{
+        width: 120px;
+        height:25px;
+    }
+    .md-form {
+        margin:0;
+        padding-top:12px;
+    }
+    main{
+        margin-top: 0;
+        padding-left:15px;
+        padding-right: 15px;
+    }
+    .welcome {
+        margin-bottom:0;
+        margin-top:15px;
+    }
+    h1{
+        font-size: 20px;
+        margin: 15px;
+        padding-top: 25px;
+    }
+    .dog-list{
+        grid-gap: 10px;
+    }
+  }
+
+  @media all and (min-width: 800px){
     body {
       font-size: 20px;
     }
     main{
         margin:auto;
         padding:50px;
+    }
+    h1{
+        font-size: 40px;
+        margin: 25px;
+        padding-top: 40px;
     }
   }

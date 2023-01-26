@@ -111,7 +111,14 @@ main {
 .modal-content{
     color: var(--secondary-color);
 }
-
+#modal-title{
+    width:100%;
+    text-align: center;
+    padding-bottom:10px;
+}
+.modal-header{
+    padding: 25px;
+}
 .modal-body{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -162,6 +169,9 @@ main {
     .dog-list{
         grid-gap: 10px;
     }
+    #modal-title{
+        font-size: 20px;
+    }
   }
 
   @media all and (min-width: 300px) and (max-width: 400px){
@@ -199,6 +209,9 @@ main {
     .dog-list{
         grid-gap: 10px;
     }
+    #modal-title{
+        font-size: 25px;
+    }
   }
 
   @media all and (min-width: 400px) and (max-width:800px){
@@ -235,6 +248,9 @@ main {
     }
     .dog-list{
         grid-gap: 10px;
+    }
+    #modal-title{
+        font-size: 30px;
     }
   }
 

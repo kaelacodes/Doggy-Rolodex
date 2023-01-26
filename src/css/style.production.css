@@ -20,8 +20,6 @@
 }
 .logo {
     width: 75px;
-    margin-left: 10px;
-    margin-right: 15px;
     border-radius: 10px;
 }
 
@@ -33,6 +31,7 @@ body {
 }
 .nav-brand {
     color: var(--secondary-color);
+    margin-left: 15px;
 }
 
 /* Main Styling */

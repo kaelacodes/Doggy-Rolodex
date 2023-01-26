@@ -8,6 +8,7 @@
 * Process:
     * Programming Languages
     * Dependencies
+    * Extensions
     * Used Resources
 
 ## Overview
@@ -19,6 +20,11 @@ Doggydex App is a small web application with HTML, CSS, and JavaScript that load
 * Loads data from an external source (API)
 * View a list of items
 * On user interaction (e.g., by clicking on a list item), view details for that item
+
+## Links:
+* [Link](https://kaelacodes.github.io/Doggy-Rolodex/) to live web application
+
+## Process:
 
 ### Programing Languages:
 * HTML

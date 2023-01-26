@@ -74,7 +74,7 @@ let dogRepository = (function (){
         modalBody.empty();
         modalTitle.text(dog.name);
 
-        let image = $('<img class="col-12" id="dog-img" src="' + dog.imageUrl + '"/>');
+        let image = $('<img id="dog-img" class="col-12" src="' + dog.imageUrl + '"/>');
         let breedGroup = $('<p id="breed-group" class="col-12 text-center">Breed Group: ' + dog.breedGroup + '</p>');
         let weight = $('<p id="weight" class="col-12 text-center">Weight: ' + dog.weight + ' lbs</p>');
         let height = $('<p id="height" class="col-12 text-center">Height: ' + dog.height + ' inches</p>');

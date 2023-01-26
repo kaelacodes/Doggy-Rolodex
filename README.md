@@ -26,12 +26,12 @@ Doggydex App is a small web application with HTML, CSS, and JavaScript that load
 * JavaScript ES6
 
 ### Dependencies:
-Polyfills:
-* [Promise](https://raw.githubusercontent.com/taylorhakes/promise-polyfill/master/dist/polyfill.min.js)
-* [Fetch](https://github.com/github/fetch)
-Frameworks:
-* [jQuery](https://jquery.com/)
-* [Bootstrap](https://getbootstrap.com/)
+* Polyfills:
+    * [Promise](https://raw.githubusercontent.com/taylorhakes/promise-polyfill/master/dist/polyfill.min.js)
+    * [Fetch](https://github.com/github/fetch)
+* Frameworks:
+    * [jQuery](https://jquery.com/)
+    * [Bootstrap](https://getbootstrap.com/)
 
 ### Extensions:
 * [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)

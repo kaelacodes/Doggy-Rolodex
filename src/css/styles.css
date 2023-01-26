@@ -10,6 +10,13 @@
     --tertiary-color-lighter: #8d7577;
     --tertiary-color-lightest: #c7bbbc;
 }
+.logo {
+    width: 75px;
+    margin-left: 10px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+
 body {
     background-color: var(--primary-color);
     font-family: 'Hind Madurai', sans-serif;

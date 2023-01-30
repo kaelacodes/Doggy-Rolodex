@@ -9,7 +9,6 @@ let dogRepository = (function (){
     function add(dog){
         if (typeof dog === "object" && "name" in dog){
             dogList.push(dog);
-            console.log('add() called, "' + dog.name + '" added');
         }
         else {
             console.log('dog is not correct');
@@ -40,7 +39,6 @@ let dogRepository = (function (){
                     origin: item.origin,
                     imageUrl: item.image.url
                 };
-                console.log('loadList() called');
                 add(dog);
             });
         }).catch(function(e){
@@ -57,11 +55,8 @@ let dogRepository = (function (){
         listItem.append(itemButton);
         dogListElement.append(listItem);
 
-        console.log('addlListItem() called');
-
         //event listener shows dog details when button is clicked
         itemButton.on('click', function(){
-            console.log('itemButton has been clicked');
             showDetailsModal(dog);
         });
     }
@@ -107,8 +102,6 @@ let dogRepository = (function (){
         if(dog.bredFor === undefined || dog.bredFor.length < 1){
             $('#bred-for').remove();
         }
-
-        console.log('showDetailsModal() called');
     }   
 
     // functionality for filtering dog-list via search input
@@ -134,6 +127,5 @@ let dogRepository = (function (){
 dogRepository.loadList().then(function(){
     dogRepository.getAll().forEach(function(dog){
         dogRepository.addListItem(dog);
-        console.log('implement ' + dog.name + ' object from API into DOM');
     });
 });

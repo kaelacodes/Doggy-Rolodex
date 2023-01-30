@@ -11,7 +11,8 @@
     * Extensions
     * Used Resources
 
-## Overview
+## Overview:
+Doggydex App was born from the Pokedex App (a student project) which I ventured to take further by recreating the App using a different API on my own, in order to dig further into the concept of using APIs. I enjoyed recreating this project following a theme that I felt more personally inspired by. I also appreciated the oportunity to confront gaps in my understanding of how certain pieces of code really work by exploring them in a different context without explicite instruction, as well as the opportunity to learn how to debug my code in a hands on way rather than in theory when I came accross obsticals.
 
 ### Objective:
 Doggydex App is a small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of dog related data points in detail on demand.
@@ -43,4 +44,4 @@ Doggydex App is a small web application with HTML, CSS, and JavaScript that load
 * [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### Used Resources:
-* [Dog API used for this application](https://api.thedogapi.com/v1/breeds)
+* [Dog API used for this application](https://thedogapi.com)
